@@ -1,20 +1,22 @@
 import cv2
 import time
-import matplotlib.pyplot as plt
 
-# loading cascade classifier
+### loading cascade classifier
 haar_face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
+lbp_face_cascade = cv2.CascadeClassifier('lbpcascade_frontalface.xml')
 
-# load image path
+### load image path
 path_img = ('img/img1.jpg')
+# path_img = ('img/img2.jpg')
+# path_img = ('img/img3.jpg')
 
-# read the image
-bird_img = cv2.imread(path_img, cv2.IMREAD_ANYCOLOR)
+### read the image
+bird_img = cv2.imread(path_img)
 
-# convert img from rgb to gray
+### convert img from rgb to gray
 gray_img = cv2.cvtColor(bird_img, cv2.COLOR_BGR2GRAY)
 
-# resizig image
+### resizig image
 # gray_bird_img = cv2.resize(gray_bird_img, (320, 380))
 
 faces = haar_face_cascade.detectMultiScale(gray_img, scaleFactor=1.1, minNeighbors=5)
