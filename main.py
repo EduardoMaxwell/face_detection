@@ -30,7 +30,6 @@ gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 ### resizig image
 # gray_img = cv2.resize(gray_img, (320, 380))
-<<<<<<< HEAD
 
 ###call function to detect faces - HAAR
 faces_haar = haar_face_cascade.detectMultiScale(gray_img, scaleFactor=1.1, minNeighbors=5)
@@ -40,25 +39,11 @@ faces_lbp = lbp_face_cascade.detectMultiScale(gray_img, scaleFactor=1.1, minNeig
 
 for (x, y, w, h) in faces_haar:
     cv2.rectangle(gray_img, (x, y), (x + w, y + h), (0, 255, 0), 2)
-
-#print("Face detectadas:  ", len(faces_haar))
-
 
 #image_cascade = detect_face()
 #cv2.imshow(image_cascade)
-=======
-
-###call function to detect faces - HAAR
-faces_haar = haar_face_cascade.detectMultiScale(gray_img, scaleFactor=1.1, minNeighbors=5)
-
-###call function to detect faces - LBP
-faces_lbp = lbp_face_cascade.detectMultiScale(gray_img, scaleFactor=1.1, minNeighbors=5)
-
-for (x, y, w, h) in faces_haar:
-    cv2.rectangle(gray_img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
 print("Face detectadas:  ", len(faces_haar))
->>>>>>> db81aa5d6f9322a843587fab0abf956c7eb7c623
 
 # show img in window
 cv2.imshow('Show Image', gray_img)
