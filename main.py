@@ -25,7 +25,7 @@ for (x, y, w, h) in faces:
 # I've tryied to do that, but it returns the same gray img
 # img_colorful = cv2.cvtColor(gray_img, cv2.COLOR_GRAY2BGR)
 
-print("Faces:  ", len(faces))
+print("Face detectadas:  ", len(faces))
 
 # show img in window
 cv2.imshow('Show Image', gray_img)
