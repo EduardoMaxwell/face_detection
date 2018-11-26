@@ -2,8 +2,8 @@ import cv2
 import time
 
 ### loading cascade classifier
-haar_face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
-lbp_face_cascade = cv2.CascadeClassifier('lbpcascade_frontalface.xml')
+haar_face_cascade = cv2.CascadeClassifier('resources/haarcascade_frontalface_alt.xml')
+lbp_face_cascade = cv2.CascadeClassifier('resources/lbpcascade_frontalface.xml')
 
 ### load image path
 path_img = ('img/img1.jpg')
