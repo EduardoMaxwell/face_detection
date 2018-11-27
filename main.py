@@ -11,6 +11,7 @@ def detect_faces(cascade_classifier, img, scaleFactor=1.1):
         cv2.rectangle(gray_img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
     return gray_img
+    
 ### loading cascade classifier HAAR
 haar_face_cascade = cv2.CascadeClassifier('resources/haarcascade_frontalface_alt.xml')
 
