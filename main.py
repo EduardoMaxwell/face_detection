@@ -7,7 +7,7 @@ def detect_faces(cascade_classifier, img, scaleFactor=1.1):
 
     faces = cascade_classifier.detectMultiScale(gray_img, scaleFactor=scaleFactor, minNeighbors=5)
 
-    for (x, y, w, h) in faces_haar:
+    for (x, y, w, h) in faces:
         cv2.rectangle(gray_img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
     return gray_img
@@ -40,10 +40,30 @@ faces_lbp = lbp_face_cascade.detectMultiScale(gray_img, scaleFactor=1.1, minNeig
 for (x, y, w, h) in faces_haar:
     cv2.rectangle(gray_img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-#image_cascade = detect_face()
-#cv2.imshow(image_cascade)
+###------------HAAR-----------
+#time_before_haar = time.time()
 
-print("Face detectadas:  ", len(faces_haar))
+#image_cascade = detect_faces(haar_face_cascade, img, scaleFactor=1.1)
+#cv2.imshow("Image HAAR",image_cascade)
+
+#time_after_haar = time.time()
+
+#time_haar = time_after_haar - time_before_haar
+#print("Processing Time HAAR: ", str(round(time_haar, 3)))
+
+###------------LBP-----------
+#time_before_lbp = time.time()
+
+#image_cascade = detect_faces(lbp_face_cascade, img, scaleFactor=1.1)
+#cv2.imshow("Image LBP",image_cascade)
+
+#time_after_lbp = time.time()
+
+#time_lbp = time_after_lbp - time_before_lbp
+#print("Processing Time LBP: "+ str(round(time_lbp, 3)))
+
+###---------------------------
+#print("Face detectadas:  ", len(faces_haar))
 
 # show img in window
 cv2.imshow('Show Image', gray_img)
