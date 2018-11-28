@@ -18,5 +18,6 @@ https://www.superdatascience.com/opencv-face-detection/
 
 * Para usar uma imagem diferente, apenas descomente a linha que carrega o caminho da imagem que deseja. Linhas 27, 28 e 29
 
-* Para usar suas próprias imagens salve-as na pasta *img* e passe o caminhos delas nas variáveis *path_img* 
+* Para usar suas próprias imagens salve-as na pasta *img* e passe os caminhos delas nas variáveis *path_img* 
+como feito nas linhas 27, 28 e 29
 
