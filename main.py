@@ -1,19 +1,15 @@
 import cv2
 import time
-import matplotlib
-
-matplotlib.use('tkagg')
-import plotly
-
+# import plotly
 # plotly.tools.set_credentials_file(username='Nome_Usuario', api_key='Chave_Gerada_No_Site')
-import plotly.plotly as py
-import plotly.graph_objs as go
+# import plotly.plotly as py
+# import plotly.graph_objs as go
 
 
-def detect_faces(cascade_classifier, img, scaleFactor=1.1):
+def detect_faces(cascade_classifier, img, scalefactor=1.1):
     # convert img from bgr to gray
     gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    faces = cascade_classifier.detectMultiScale(gray_img, scaleFactor=scaleFactor, minNeighbors=5)
+    faces = cascade_classifier.detectMultiScale(gray_img, scaleFactor=scalefactor, minNeighbors=5)
     print("Face detectadas: ", len(faces))
 
     for (x, y, w, h) in faces:
@@ -41,7 +37,7 @@ img = cv2.imread(path_img)
 # ------------HAAR-----------
 time_before_haar = time.time()
 
-image_cascade = detect_faces(haar_face_cascade, img, scaleFactor=1.1)
+image_cascade = detect_faces(haar_face_cascade, img)
 cv2.imshow("Image HAAR", image_cascade)
 
 time_after_haar = time.time()
@@ -53,7 +49,7 @@ print("Processing Time HAAR: ", str(round(time_haar, 3)))
 
 time_before_lbp = time.time()
 
-image_cascade = detect_faces(lbp_face_cascade, img, scaleFactor=1.1)
+image_cascade = detect_faces(lbp_face_cascade, img)
 cv2.imshow("Image LBP", image_cascade)
 
 time_after_lbp = time.time()
